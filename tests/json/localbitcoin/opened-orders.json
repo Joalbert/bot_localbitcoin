@@ -1,0 +1,116 @@
+{
+    "data": {
+       "contact_list": [
+          {
+             "actions": {
+                "messages_url": "https://localbitcoins.com/api/contact_messages/76511813/",
+                "message_post_url": "https://localbitcoins.com/api/contact_message_post/76511813/",
+                "advertisement_public_view": "https://localbitcoins.com/ad/1413004",
+                "advertisement_url": "https://localbitcoins.com/api/ad-get/1413004/"
+             },
+             "data": {
+                "created_at": "2021-12-03T21:49:09+00:00",
+                "buyer": {
+                   "username": "xyz2000",
+                   "trade_count": "6000+",
+                   "feedback_score": 100,
+                   "name": "xyz2000 (6000+; 100%)",
+                   "last_online": "2022-05-13T18:43:51+00:00"
+                },
+                "seller": {
+                   "username": "Dmrg3112",
+                   "trade_count": "250+",
+                   "feedback_score": 99,
+                   "name": "Dmrg3112 (250+; 99%)",
+                   "last_online": "2022-04-07T10:31:35+00:00"
+                },
+                "is_buying": true,
+                "is_selling": false,
+                "currency": "VED",
+                "amount": "1301.20",
+                "amount_btc": "0.00535211",
+                "fee_btc": "0.00005352",
+                "exchange_rate_updated_at": "2021-12-03T21:49:09+00:00",
+                "payment_completed_at": "2021-12-03T21:56:25+00:00",
+                "escrowed_at": "2021-12-03T21:49:09+00:00",
+                "funded_at": "2021-12-03T21:49:09+00:00",
+                "canceled_at": null,
+                "released_at": "2021-12-03T22:21:32+00:00",
+                "disputed_at": null,
+                "closed_at": null,
+                "contact_id": 76511813,
+                "advertisement": {
+                   "id": 1413004,
+                   "trade_type": "ONLINE_BUY",
+                   "advertiser": {
+                      "username": "xyz2000",
+                      "trade_count": "6000+",
+                      "feedback_score": 100,
+                      "name": "xyz2000 (6000+; 100%)",
+                      "last_online": "2022-05-13T18:43:51+00:00"
+                   },
+                   "payment_method": "SPECIFIC_BANK"
+                },
+                "reference_code": "L76511813B19JWW5"
+             }
+          },
+          {
+             "actions": {
+                "messages_url": "https://localbitcoins.com/api/contact_messages/76511874/",
+                "message_post_url": "https://localbitcoins.com/api/contact_message_post/76511874/",
+                "advertisement_public_view": "https://localbitcoins.com/ad/1413004",
+                "advertisement_url": "https://localbitcoins.com/api/ad-get/1413004/"
+             },
+             "data": {
+                "created_at": "2021-12-03T21:54:05+00:00",
+                "buyer": {
+                   "username": "xyz2000",
+                   "trade_count": "6000+",
+                   "feedback_score": 100,
+                   "name": "xyz2000 (6000+; 100%)",
+                   "last_online": "2022-05-13T18:43:51+00:00"
+                },
+                "seller": {
+                   "username": "Avatarplus",
+                   "trade_count": "5000+",
+                   "feedback_score": 100,
+                   "name": "Avatarplus (5000+; 100%)",
+                   "last_online": "2022-05-13T12:35:50+00:00"
+                },
+                "is_buying": true,
+                "is_selling": false,
+                "currency": "VED",
+                "amount": "2802.90",
+                "amount_btc": "0.01143999",
+                "fee_btc": "0.00011440",
+                "exchange_rate_updated_at": "2021-12-03T21:54:05+00:00",
+                "payment_completed_at": "2021-12-03T21:57:18+00:00",
+                "escrowed_at": "2021-12-03T21:54:05+00:00",
+                "funded_at": "2021-12-03T21:54:05+00:00",
+                "canceled_at": null,
+                "released_at": "2021-12-03T22:09:10+00:00",
+                "disputed_at": null,
+                "closed_at": null,
+                "contact_id": 76511874,
+                "advertisement": {
+                   "id": 1413004,
+                   "trade_type": "ONLINE_BUY",
+                   "advertiser": {
+                      "username": "xyz2000",
+                      "trade_count": "6000+",
+                      "feedback_score": 100,
+                      "name": "xyz2000 (6000+; 100%)",
+                      "last_online": "2022-05-13T18:43:51+00:00"
+                   },
+                   "payment_method": "SPECIFIC_BANK"
+                },
+                "reference_code": "L76511874B19JWXU"
+             }
+          }
+      ],
+       "contact_count": 50
+    },
+    "pagination": {
+       "next": "https://localbitcoins.com/api/dashboard/closed/?order_by=-closed_at&start_at=2021-11-05+16%3A50%3A32%2B00%3A00"
+    }
+ }
