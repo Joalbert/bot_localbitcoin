@@ -67,7 +67,6 @@ class Test(unittest.TestCase):
         expected_value = file_to_json(OPENED_ORDER_LOC)
         self.check_get_no_argument(expected_value,
                     localbitcoin.get_opened_order)
-
     
     
     def test_get_messages_active_order(self):
@@ -82,12 +81,15 @@ class Test(unittest.TestCase):
 
     def test_post_username_feedback(self):
         pass
+        #TODO
 
     
     def test_post_contact_messages(self):
         pass
+        #TODO
 
     def test_update_price_ad(self):
         pass
+        #TODO
 
             

@@ -66,6 +66,60 @@ class MockConnection(ConnectionLocalBitcoin):
         """Create user ads"""
         return True
 
+class MockConnectionError(ConnectionLocalBitcoin):
+     
+    def __init__(self, credentials:Dict[str, str])->None:
+        return 
+     
+    def get_sell_ads(self, **kwargs)->List[Dict[str, str]]:
+        raise ConnectionError()
+  
+    def get_buy_ads(self, **kwargs)->List[Dict[str, str]]:
+        """ Get buy ads availables for some country and a specific page of pagination"""
+        raise ConnectionError()
+ 
+    def get_user_ads(self)->List[Dict[str, str]]:
+        """Get user ads"""
+        raise ConnectionError()
+         
+    def post_username_feedback(self, *, 
+            username:str, message:Dict[str, str])-> bool:
+        """ Post feedback from specific username"""
+        raise ConnectionError()
+     
+    def get_contact_messages(self, 
+            contact_id:str)->List[Dict[str, str]]:
+        """ Get contact messages from chat for specific contact id"""
+        raise ConnectionError()
+     
+    def post_contact_messages(self, 
+                            contact_id:str, 
+                            message:str)->bool:
+        """ Post a message for a chat"""
+        raise ConnectionError()
+     
+    def get_opened_order(self)->List[Dict[str, str]]:
+        """ Get our active ads"""
+        raise ConnectionError()
+     
+    def get_closed_order(self)->List[Dict[str, str]]:
+        """ Get messages from closed orders"""
+        # breakpoint()
+        raise ConnectionError()
+     
+    def get_messages_active_order(self, 
+            contact_id:str)->List[Dict[str, str]]:
+        """ Get messages from open orders"""
+        raise ConnectionError()
+     
+    def update_price_ad(self,ad_id, value)->bool:
+        raise ConnectionError()
+    
+    def create_user_ads(self, **kwargs)->bool:
+        """Create user ads"""
+        raise ConnectionError()
+
+
 class MockAdapter(AdapterLocalbitcoin):
     """Mock adapter"""
     def to_list_ad(self, data: List[Dict[str, Any]]) -> List[Ad]:

@@ -7,20 +7,6 @@ from adapters.localbitcoin import *
 from connection import Connection
 
 
-def post_decorator(func):
-    @wraps
-    def inner_func(*args, **kwargs):
-        try:
-            func(*args, **kwargs)
-        except ConnectionError:
-            return False
-        except Exception:
-            return False
-        else:
-            return True
-    return inner_func
-
-
 class ConnectionLocalBitcoin(Connection):
     _base_url= "https://localbitcoins.com"
     
@@ -28,24 +14,35 @@ class ConnectionLocalBitcoin(Connection):
         self.hmac_key = credentials["hmac_key"]
         self.hmac_secret = credentials["hmac_secret"] 
         
+    
     def _get_http(self, url:str)->Any:
         conn = hmac(self.hmac_key, self.hmac_secret)
-        response= conn.call('GET', url)
-        return response.json()       
+        try:
+            response= conn.call('GET', url)
+        except (ConnectionError, Exception) as e:
+            print(f"Failed to get from {url}, due to {e}")
+        else:
+            result =response.json()
+            error_dict = result.get("error", "")
+            if error_dict!="":
+                print(f"HTTP code 400, message{error_dict.get('message','')}")
+                raise Exception(error_dict.get("message",""))
+            return result       
+    
     
     def _post_http(self, url:str, data:Dict[str, str])->bool:
         conn = hmac(self.hmac_key, self.hmac_secret)
         try:
             response= conn.call('POST', url,params=data)
-            result= response.json()
-        except ConnectionError:
-            print(f"Failed to post to {url}")
-            return False
-        except Exception as e:
-            print(f"Failed to post to {url}, because of {e}")
+        except (ConnectionError, Exception) as e:
+            print(f"Failed to post to {url}, due to {e}")
             return False
         else:
-            print(result)
+            result =response.json()
+            error_dict = result.get("error", "")
+            if error_dict!="":
+                print(f"HTTP code 400, message{error_dict.get('message','')}")
+                return False
             return True
     
     def get_sell_ads(self, **kwargs)->Any:
