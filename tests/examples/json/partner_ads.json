@@ -1,0 +1,97 @@
+{
+    "data": {
+    "ad_list": [
+    {
+    "data": {
+    "profile": {
+    "username": "thd68",
+    "trade_count": "300+",
+    "feedback_score": 98,
+    "name": "thd68 (300+; 98%)",
+    "last_online": "2022-05-12T04:49:37+00:00"
+    },
+    "visible": true,
+    "hidden_by_opening_hours": false,
+    "location_string": "Venezuela",
+    "countrycode": "VE",
+    "city": "",
+    "trade_type": "ONLINE_SELL",
+    "online_provider": "SPECIFIC_BANK",
+    "first_time_limit_btc": null,
+    "volume_coefficient_btc": "1.50",
+    "sms_verification_required": true,
+    "currency": "VED",
+    "lat": 0,
+    "lon": 0,
+    "min_amount": null,
+    "max_amount": null,
+    "max_amount_available": "1.39",
+    "min_amount_available": "14.27",
+    "ad_id": 1442920,
+    "temp_price_usd": "31148.86",
+    "temp_price": "142613.52",
+    "created_at": "2022-03-07T19:26:35+00:00",
+    "require_feedback_score": 0,
+    "require_trade_volume": 0,
+    "msg": "Una sola transferencia por trade. Pasos: 1) Realizar la transferencia 2) Adjuntar comprobante 3) Verifico y libero IMPORTANTE: Usted asume 100% responsabilidad Jurídica, penal y tributaria ante los fondos enviados. Usted asume el compromiso y responsabilidad por los fondos que usted envió a nuestras cuentas. Cualquier intento de fraude, se reportara ante las autoridades. Cuando acepta, usted declara que los fondos que ingresa a nuestra cuenta no están vinculados con actividades de lavado de capitales privados o publicos, terrorismo ni actividades ilícitas. -AL SOLICITAR UN INTERCAMBIO EN ESTE ANUNCIO USTED DECLARA BAJO JURAMENTO QUE SUS FONDOS PROCEDEN DE ACTIVIDADES DE LEGÍTIMO CARÁCTER MERCANTIL, LO CUAL PUEDE SER CORROBORADO POR LOS ORGANISMOS COMPETENTES Y NO TIENEN RELACIÓN ALGUNA CON DINERO, CAPITALES, BIENES, HABERES, VALORES O TÍTULOS QUE SE CONSIDEREN PRODUCTO DE LAS ACTIVIDADES O ACCIONES ILÍCITAS CONTEMPLADAS EN LA LEY ORGÁNICA CONTRA LA DELINCUENCIA ORGANIZADA Y LA LEY ORGÁNICA DE DROGAS DE LA REPÚBLICA BOLIVARIANA DE VENEZUELA.",
+    "bank_name": "PAG MOVIL✅CARIBE✅MERCANTIL✅PROVINCIA En línea ✅✅✅✅",
+    "atm_model": null,
+    "require_trusted_by_advertiser": false,
+    "require_identification": false,
+    "is_local_office": false,
+    "payment_window_minutes": 90,
+    "limit_to_fiat_amounts": null
+    },
+    "actions": {
+    "public_view": "https://localbitcoins.com/ad/1442920"
+    }
+    },
+    {
+    "data": {
+    "profile": {
+    "username": "AbrahamP1",
+    "trade_count": "1500+",
+    "feedback_score": 100,
+    "name": "AbrahamP1 (1500+; 100%)",
+    "last_online": "2022-05-12T17:44:37+00:00"
+    },
+    "visible": true,
+    "hidden_by_opening_hours": false,
+    "location_string": "Venezuela",
+    "countrycode": "VE",
+    "city": "",
+    "trade_type": "ONLINE_SELL",
+    "online_provider": "SPECIFIC_BANK",
+    "first_time_limit_btc": "0.02",
+    "volume_coefficient_btc": "1.50",
+    "sms_verification_required": true,
+    "currency": "VED",
+    "lat": 0,
+    "lon": 0,
+    "min_amount": "150.00",
+    "max_amount": "2200.00",
+    "max_amount_available": "1814.56",
+    "min_amount_available": "150.00",
+    "ad_id": 1410674,
+    "temp_price_usd": "33863.67",
+    "temp_price": "155043.14",
+    "created_at": "2021-10-06T18:01:33+00:00",
+    "require_feedback_score": 100,
+    "require_trade_volume": 0,
+    "msg": "Bienvenido, esperamos hacer una buena negociación donde ambos nos beneficiemos.",
+    "bank_name": "BDVENEZUELA✅MERCANTIL☑️BNC✅BANESCO⏩PAGO MÓVIL",
+    "atm_model": null,
+    "require_trusted_by_advertiser": false,
+    "require_identification": true,
+    "is_local_office": false,
+    "payment_window_minutes": 90,
+    "limit_to_fiat_amounts": null
+    },
+    "actions": {
+    "public_view": "https://localbitcoins.com/ad/1410674"
+    }
+    } 
+    ],
+    "ad_count": 2
+    }
+    }
