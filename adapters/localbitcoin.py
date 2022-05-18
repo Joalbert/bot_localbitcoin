@@ -7,7 +7,7 @@ from adapters import Adapter
 
 class AdapterLocalbitcoin(Adapter):
 
-    def to_list_ad(self, data: List[Dict[str, Any]]) -> List[Ad]:
+    def to_list_ad(self, data: Any) -> List[Ad]:
         response = []
         for item in data:
             response.append(
@@ -20,7 +20,7 @@ class AdapterLocalbitcoin(Adapter):
                 bool(item["data"]["visible"]),))
         return response
         
-    def to_list_order(self, data: List[Dict[str, Any]]) -> List[Order]:
+    def to_list_order(self, data: Any) -> List[Order]:
         response = []
         for item in data:
             response.append(
@@ -36,7 +36,7 @@ class AdapterLocalbitcoin(Adapter):
             )
         return response
 
-    def to_list_messages(self, data: List[Dict[str, Any]]) -> List[ChatMessage]:
+    def to_list_messages(self, data: Any) -> List[ChatMessage]:
         response = []
         for item in data:
             response.append(

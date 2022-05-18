@@ -2,7 +2,9 @@ from unittest import TestCase, mock
 from decimal import Decimal
 
 from tests.mocks import (MockAdapter, MockConnection, MockUser,
-        mock_list_ad, mock_list_chat_messages, mock_several_ads)
+        mock_list_ad, mock_list_all_order, mock_list_chat_messages, mock_several_ads,
+        mock_list_all, mock_list_all_chat_messages)
+from tests import BUY_JSON_LOC, OPENED_ORDER_LOC, CLOSED_ORDER_LOC, SELL_JSON_LOC
 from models import (Chat, ChatMessage, UserData, Feedback, Order, Ad)
 from bot import Bot
 
@@ -113,3 +115,29 @@ class TestUser(TestCase):
         MINIMUM = 2
         self.assertEqual(ads[MINIMUM].price, 
                 self.bot.get_smaller_price(ads))
+
+    def test_read_opened_order(self):
+        expected_value = mock_list_all_order(OPENED_ORDER_LOC)
+        self.assertEqual(expected_value, self.bot.read_opened_order())
+
+    def test_read_closed_order(self):
+        expected_value = mock_list_all_order(CLOSED_ORDER_LOC)
+        self.assertEqual(expected_value, self.bot.read_closed_order())
+
+    def test_read_messages(self):
+        chat = Chat(1, "xyz")
+        expected_value = mock_list_all_chat_messages()
+        self.assertEqual(expected_value, self.bot.read_messages(chat))
+
+    def test_read_my_ads(self):
+        expected_value = mock_list_ad()
+        self.assertEqual(expected_value, self.bot.read_my_ads())
+
+
+    def test_read_buy_ads(self,**kwargs):
+        expected_value = mock_list_all(BUY_JSON_LOC)
+        self.assertEqual(expected_value, self.bot.read_buy_ads())
+
+    def test_read_sell_ads(self):
+        expected_value = mock_list_all(SELL_JSON_LOC)
+        self.assertEqual(expected_value, self.bot.read_sell_ads())

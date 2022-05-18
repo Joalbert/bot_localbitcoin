@@ -1,9 +1,8 @@
-from typing import List, Dict, Any
+from typing import Dict, Any
 from functools import wraps
 
 from lbcapi3.api import hmac
 
-from models import Ad, ChatMessage, Order
 from adapters.localbitcoin import *
 from connection import Connection
 
@@ -29,7 +28,7 @@ class ConnectionLocalBitcoin(Connection):
         self.hmac_key = credentials["hmac_key"]
         self.hmac_secret = credentials["hmac_secret"] 
         
-    def _get_http(self, url:str)->List[Dict[str,Any]]:
+    def _get_http(self, url:str)->Any:
         conn = hmac(self.hmac_key, self.hmac_secret)
         response= conn.call('GET', url)
         return response.json()       
@@ -49,7 +48,7 @@ class ConnectionLocalBitcoin(Connection):
             print(result)
             return True
     
-    def get_sell_ads(self, **kwargs)->List[Dict[str,Any]]:
+    def get_sell_ads(self, **kwargs)->Any:
         """ Get sell ads availables for some country and 
         a specific page of pagination"""
         return self._get_http(
@@ -58,7 +57,7 @@ class ConnectionLocalBitcoin(Connection):
             ) 
        
     
-    def get_buy_ads(self, **kwargs)->List[Dict[str,Any]]:
+    def get_buy_ads(self, **kwargs)->Any:
         """ Get buy ads availables for some country 
         and a specific page of pagination"""
         return self._get_http(
@@ -67,7 +66,7 @@ class ConnectionLocalBitcoin(Connection):
             )
         
     
-    def get_user_ads(self)->List[Dict[str,Any]]:
+    def get_user_ads(self)->Any:
         """Get user ads"""
         return self._get_http(f"{self._base_url}/api/ads/") 
         
@@ -78,7 +77,7 @@ class ConnectionLocalBitcoin(Connection):
             f"{self._base_url}/api/ad-create/", **kwargs)
         
 
-    def get_closed_order(self)->List[Dict[str,Any]]:
+    def get_closed_order(self)->Any:
         """ Get messages from closed orders"""
         return self._get_http(
             f"{self._base_url}/api/dashboard/closed/")
@@ -90,17 +89,17 @@ class ConnectionLocalBitcoin(Connection):
             f"{self._base_url}/api/feedback/{username}/", 
             message)
 
-    def get_contact_messages(self, contact_id:str)->List[Dict[str,Any]]:
+    def get_contact_messages(self, contact_id:str)->Any:
         """ Get contact messages from chat for specific contact id"""
         pass
 
-    def get_opened_order(self)->List[Dict[str,Any]]:
+    def get_opened_order(self)->Any:
         """ Get our active ads"""
         return self._get_http(
             f"{self._base_url}/api/dashboard/")
     
     
-    def get_messages_active_order(self, contact_id:str)->List[Dict[str,Any]]:
+    def get_messages_active_order(self, contact_id:str)->Any:
         """ Get messages from open orders"""
         return self._get_http(
             f"{self._base_url}/api/contact_messages/{contact_id}/")

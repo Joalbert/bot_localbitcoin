@@ -6,15 +6,15 @@ from models import Ad, Order, ChatMessage
 class Adapter(abc.ABC):
     
     @abc.abstractmethod
-    def to_list_order(self, data:List[Dict[str,Any]])->List[Order]:
+    def to_list_order(self, data:Any)->List[Order]:
         pass
     
     
     @abc.abstractmethod
-    def to_list_ad(self, data: List[Dict[str,Any]])->List[Ad]:
+    def to_list_ad(self, data: Any)->List[Ad]:
         pass
 
     
     @abc.abstractmethod    
-    def to_list_messages(self, data: List[Dict[str,Any]])->List[ChatMessage]:
+    def to_list_messages(self, data: Any)->List[ChatMessage]:
         pass

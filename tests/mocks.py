@@ -130,16 +130,16 @@ class MockUser(User):
 
     def get_user_ads(self)->List[Ad]:
         """User's ads"""
-        return mock_list_ad()
+        return mock_list_my_ads()
     
     def read_buy_ads(self, **kwargs)->List[Ad]:
         """Read all buy ads in the webpage"""
-        return mock_list_ad()
+        return mock_list_all(BUY_JSON_LOC)
 
 
     def read_sell_ads(self, **kwargs)->List[Ad]:
         """Read all sell ads in the webpage"""
-        return mock_list_ad()
+        return mock_list_all(SELL_JSON_LOC)
 
     
     def write_price_ad(self, ad:Ad, price:Decimal)->bool:
@@ -148,7 +148,7 @@ class MockUser(User):
 
     def read_closed_order(self)->List[Order]:
         """ Read feedback for a transaction """
-        return mock_list_order()
+        return mock_list_all_order(CLOSED_ORDER_LOC)
 
     def write_feedback_order(self, user_to_be_score:UserData, 
             feedback:Feedback)->bool:
@@ -157,11 +157,11 @@ class MockUser(User):
 
     def read_opened_orders(self)->List[Order]:
         """ Write a message for a chat """
-        return mock_list_order()
+        return mock_list_all_order(OPENED_ORDER_LOC)
 
     def read_messages_chat(self, chat:Chat)->List[ChatMessage]:
         """ Write a message for a chat """
-        return mock_list_chat_messages()
+        return mock_list_all_chat_messages()
 
     def write_message_chat(self, chat:Chat, message:ChatMessage)->bool:
         """ Write a message for a chat """

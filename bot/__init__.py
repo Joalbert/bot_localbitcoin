@@ -77,17 +77,22 @@ class Bot:
                 price=ad.price
         return price 
 
+
     def read_opened_order(self):
         return self.user.read_opened_orders()
+
 
     def read_closed_order(self):
         return self.user.read_closed_order()
 
+
     def read_messages(self, chat:Chat):
         return self.user.read_messages_chat(chat)
 
+
     def read_my_ads(self):
         return self.user.get_user_ads()
+
 
     def read_buy_ads(self,**kwargs):
         return self.user.read_buy_ads(**kwargs)

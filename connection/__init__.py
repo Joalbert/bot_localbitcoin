@@ -10,19 +10,19 @@ class Connection(abc.ABC):
         
    
     @abc.abstractmethod
-    def get_sell_ads(self, **kwargs)->List[Dict[str, str]]:
+    def get_sell_ads(self, **kwargs)->Any:
         """ Get sell ads availables for some country and a specific page of pagination"""
         pass
  
 
     @abc.abstractmethod
-    def get_buy_ads(self, **kwargs)->List[Dict[str, str]]:
+    def get_buy_ads(self, **kwargs)->Any:
         """ Get buy ads availables for some country and a specific page of pagination"""
         pass
  
 
     @abc.abstractmethod
-    def get_user_ads(self)->List[Dict[str, str]]:
+    def get_user_ads(self)->Any:
         """Get user ads"""
         pass 
         
@@ -41,7 +41,7 @@ class Connection(abc.ABC):
     
     @abc.abstractmethod
     def get_contact_messages(self, *, 
-            contact_id:str)->List[Dict[str, str]]:
+            contact_id:str)->Any:
         """ Get contact messages from chat for specific contact id"""
         pass
 
@@ -55,20 +55,20 @@ class Connection(abc.ABC):
 
     
     @abc.abstractmethod
-    def get_opened_order(self)->List[Dict[str, str]]:
+    def get_opened_order(self)->Any:
         """ Get our active ads"""
         pass
     
     
     @abc.abstractmethod
-    def get_closed_order(self)->List[Dict[str, str]]:
+    def get_closed_order(self)->Any:
         """ Get messages from closed orders"""
         pass
 
     
     @abc.abstractmethod
     def get_messages_active_order(self, *, 
-            contact_id:str)->List[Dict[str, str]]:
+            contact_id:str)->Any:
         """ Get messages from open orders"""
         pass    
     
