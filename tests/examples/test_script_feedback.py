@@ -145,3 +145,32 @@ class TestFeedback(TestCase):
             connection.return_value = MockConnection(CREDENTIALS)
             with self.assertRaises(SystemExit):
                 script_main(args)
+
+    def test_cli_bad_data_feedback(self):
+        args = [
+            "-k 1234",
+            "-s 1234",
+            "-n John Doe",
+            "-u jd",
+            "-f tests/examples/json/bad_feedback.json",
+            "-m Excellent!",
+            "-p positive",
+            ]
+        with patch("examples.script_local_feedback.ConnectionLocalBitcoin") as connection:
+            connection.return_value = MockConnection(CREDENTIALS)
+            self.assertEqual(script_main(args), 1)
+
+    
+    def test_cli_bad_file_feedback(self):
+        args = [
+            "-k 1234",
+            "-s 1234",
+            "-n John Doe",
+            "-u jd",
+            "-f tests/examples/json/no_existant.json",
+            "-m Excellent!",
+            "-p positive",
+            ]
+        with patch("examples.script_local_feedback.ConnectionLocalBitcoin") as connection:
+            connection.return_value = MockConnection(CREDENTIALS)
+            self.assertEqual(script_main(args), 1)

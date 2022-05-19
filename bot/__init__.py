@@ -1,11 +1,14 @@
 from decimal import Decimal
 import random 
-from typing import List, Callable, Dict
+from typing import List 
 
 from user import User
-from models import ChatMessage, Ad, Order, Chat, UserData, Feedback
+from models import ChatMessage, Ad, Chat, UserData, Feedback
 
 class Bot:
+    ''' Use User Interface to communicate with broker for
+    reading messages, ads and write messages, feedbacks and update prices,
+    do common task for ads such as filtering and removing'''
     ALREADY_GREET = -1
     GREET = 0
     FAIL_TO_GREET = 1

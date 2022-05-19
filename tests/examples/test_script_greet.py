@@ -115,3 +115,31 @@ class TestGreet(TestCase):
             connection.return_value = MockConnection(CREDENTIALS)
             with self.assertRaises(SystemExit):
                 script_main(args)
+
+
+    def test_bad_file_cli(self):
+        args = [
+            "-k 1234",
+            "-s 1234",
+            "-n John Doe",
+            "-u jd",
+            "-f tests/examples/json/no_existant_greet.json",
+            ]
+        with patch("examples.script_greet.ConnectionLocalBitcoin") as connection:
+            connection.return_value = MockConnection(CREDENTIALS)
+            self.assertEqual(script_main(args),1)
+
+
+    def test_bad_data_file_cli(self):
+        args = [
+            "-k 1234",
+            "-s 1234",
+            "-n John Doe",
+            "-u jd",
+            "-f tests/examples/json/bad_greeting.json",
+            ]
+        with patch("examples.script_greet.ConnectionLocalBitcoin") as connection:
+            connection.return_value = MockConnection(CREDENTIALS)
+            self.assertEqual(script_main(args),1)
+
+

@@ -23,11 +23,12 @@ def parse_arguments(args):
             help="Json file with greet for Users", required=True)
     return parser.parse_args(args)
 
+
 def get_greeting_from_file(file_path, username):
     greet_json = file_to_json(file_path)
     greetings = []
     for id, greet in enumerate(greet_json):
-        greetings.append(ChatMessage(id, username, greet.get("greet", "")))
+        greetings.append(ChatMessage(id, username, greet["greet"]))
     return greetings
 
 
@@ -61,7 +62,13 @@ def script_main(argv=None):
     main = Main(user, credential)
     try:
         greetings = get_greeting_from_file(file_path, username)
-    except (FileNotFoundError, Exception) as e:
+    except (FileNotFoundError) as e:
+        print(f"File Error: {e}")
+        return 1
+    except (KeyError) as e:
+        print(f'Key Error: {e}, it should be "greeting"')
+        return 1
+    except (Exception) as e:
         print(f"Error: {e}")
         return 1
     try:

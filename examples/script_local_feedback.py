@@ -13,7 +13,7 @@ def get_username_from_file(file_path):
     data_json = file_to_json(file_path)
     result = []
     for user in data_json:
-        result.append(UserData(user.get("username", "")))
+        result.append(UserData(user["username"]))
     return result
 
 
@@ -66,9 +66,16 @@ def script_main(argv=None):
     main = Main(user, credential)
     try:
         users = get_username_from_file(file_path)
-    except (FileNotFoundError, Exception) as e:
+    except (FileNotFoundError) as e:
+        print(f"Error File no found {e}")
+        return 1
+    except (KeyError) as e:
+        print(f"Key Error {e}")
+        return 1
+    except (Exception) as e:
         print(f"Error {e}")
         return 1
+
     try:     
         main.set_feedback(users,feedback)
     except (ConnectionError, Exception) as e:

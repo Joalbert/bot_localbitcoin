@@ -1,5 +1,5 @@
 {
-    "data": {
+    
     "ad_list": [
     {
     "data": {
@@ -25,7 +25,7 @@
     "lon": 0,
     "min_amount": null,
     "max_amount": null,
-    "max_amount_available": "1.39",
+    "max_amount_available": "31.39",
     "min_amount_available": "14.27",
     "ad_id": 1442920,
     "temp_price_usd": "31148.86",
@@ -94,4 +94,4 @@
     ],
     "ad_count": 2
     }
-    }
+   
