@@ -1,3 +1,4 @@
+from pickle import TRUE
 from typing import List, Dict, Any
 from decimal import Decimal
 from datetime import datetime
@@ -162,10 +163,14 @@ class MockResponse:
             return file_to_json(MESSAGES_LOC)
                         
     
-    def call(self, method_http, url):
+    def call(self, method_http, url, params={}):
         if method_http == "GET":
             self.response = self._url_value(url)
             return self
+        if method_http == "POST":
+            self.response = {"response": "ok"}
+            return self
+
 
     def json(self):
         return self.response  
