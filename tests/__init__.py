@@ -6,6 +6,3 @@ MY_ADS_JSON_LOC = "tests/json/localbitcoin/ads.json"
 OPENED_ORDER_LOC = "tests/json/localbitcoin/opened-orders.json"
 CLOSED_ORDER_LOC = "tests/json/localbitcoin/closed-orders.json"
 MESSAGES_LOC = "tests/json/localbitcoin/messages.json"
-
-
-

@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 from decimal import Decimal
-from typing import Literal
+
 
 @dataclass
 class Ad:
@@ -10,17 +10,20 @@ class Ad:
     maximum_value: Decimal
     bank: str
     publisher: str
-    visible: bool=True
+    visible: bool = True
+
 
 @dataclass
 class UserData:
     username: str
-    name:str = ""
+    name: str = ""
+
 
 @dataclass
 class Chat:
     id: int
     name: str = ""
+
 
 @dataclass
 class ChatMessage:
@@ -34,6 +37,7 @@ class Feedback:
     message: str
     feedback: str
 
+
 @dataclass
 class Order:
     id: int
@@ -42,5 +46,4 @@ class Order:
     feedback: str
     feedback_message: str
     chat_id: int
-    is_closed: bool 
-    
+    is_closed: bool
