@@ -46,7 +46,7 @@ class ConnectionLocalBitcoin(Connection):
         a specific page of pagination"""
         return self._get_http(
             f"{self._base_url}/sell-bitcoins-online/"
-            f"{kwargs['country_identifier']}/.json?page={kwargs['page']}"
+            f"{kwargs['country_identifier']}/.json?page={kwargs.get('page',0)}"
         )
 
     def get_buy_ads(self, **kwargs) -> Any:
@@ -54,7 +54,7 @@ class ConnectionLocalBitcoin(Connection):
         and a specific page of pagination"""
         return self._get_http(
             f"{self._base_url}/buy-bitcoins-online/"
-            f"{kwargs['country_identifier']}/.json?page={kwargs['page']}"
+            f"{kwargs['country_identifier']}/.json?page={kwargs.get('page',0)}"
         )
 
     def get_user_ads(self) -> Any:
