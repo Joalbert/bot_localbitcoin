@@ -2,7 +2,7 @@ from unittest import TestCase
 from unittest.mock import patch
 from decimal import Decimal
 
-from examples.script_update_price import (Main,
+from script_update_price import (Main,
                                           get_ads_from_file, script_main,
                                           get_banks_from_file,
                                           filter_banks)
