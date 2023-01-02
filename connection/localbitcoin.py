@@ -52,6 +52,8 @@ class ConnectionLocalBitcoin(Connection):
     def get_buy_ads(self, **kwargs) -> Any:
         """ Get buy ads availables for some country
         and a specific page of pagination"""
+        print(  f"{self._base_url}/buy-bitcoins-online/"
+            f"{kwargs['country_identifier']}/.json?page={kwargs.get('page',0)}")
         return self._get_http(
             f"{self._base_url}/buy-bitcoins-online/"
             f"{kwargs['country_identifier']}/.json?page={kwargs.get('page',0)}"
@@ -80,7 +82,9 @@ class ConnectionLocalBitcoin(Connection):
 
     def get_contact_messages(self, contact_id: str) -> Any:
         """ Get contact messages from chat for specific contact id"""
-        pass
+        return self._get_http(
+            f"{self._base_url}/api/dashboard/")
+
 
     def get_opened_order(self) -> Any:
         """ Get our active ads"""
@@ -100,5 +104,5 @@ class ConnectionLocalBitcoin(Connection):
             {'msg': message})
 
     def update_price_ad(self, ad_id: str, value: str) -> bool:
-        return self._post_http(f'/api/ad-equation/{ad_id}/',
+        return self._post_http(f'{self._base_url}/api/ad-equation/{ad_id}/',
                                {'price_equation': value})
